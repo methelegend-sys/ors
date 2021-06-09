@@ -26,7 +26,7 @@ SECRET_KEY = 'bzb1*5h)4hjd)1z!oz=@*unm$+2-0n_m91_mhkmmohy-hz48oj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ors-django.azurewebsites.net]
 
 
 # Application definition
