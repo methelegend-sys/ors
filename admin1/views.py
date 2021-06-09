@@ -40,6 +40,16 @@ def addde(request):
     if request.session.has_key('id'):
         id = request.session['id']
         admin=admindb.objects.get(id=id)
-        return render(request,'admin1/forms.html',{'admin':admin})
+        return render(request,'admin1/addde.html',{'admin':admin,'title':'Admin'})
+    else:
+        return render(request, 'login.html',{'title':'Admin'})
+
+def demo(request):
+    if request.session.has_key('id'):
+        id = request.session['id']
+        admin=admindb.objects.get(id=id)
+        return render(request,'admin1/addcmp.html',{'admin':admin,'title':'Admin'})
+    else:
+        return render(request, 'login.html',{'title':'Admin'})
 
 

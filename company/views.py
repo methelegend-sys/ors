@@ -1,8 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .forms import del_form
-from .models import companydb,curr_del
+from .models import companydb,curr_del,delivery_data
 from django.contrib import messages
 import hashlib
 import smtplib
@@ -147,21 +146,28 @@ def policy(request):
 
 def upload(request):
     if request.session.has_key('cid'):
-        form=del_form()
         cid=request.session['cid']
         data=companydb.objects.get(id=cid)
-        return render(request,'del_upload.html',{'data':data,'form':form})
+        return render(request,'del_upload.html',{'data':data})
     else:
         return render(request,'login.html')
 
 def upload_new(request):
     if request.session.has_key('cid'):
         if request.method=='POST':
-            form = del_form(request.POST,request.FILES)
-            if form.is_valid:
-                form.save()
-                return HttpResponse("success")
-            return HttpResponse("successF")
+            fil_id = delivery_data.objects.all().last()
+            if fil_id is None:
+                fil_id='F101'
+            else:
+                fil_id = 'F'+str(int(fil_id.data_id[1:]) + 1)
+            cid=request.session['cid']
+            file=request.FILES['file']
+            delivery_data.objects.create(data_id=fil_id,cmp_id=cid,new_del=file)
+            messages.error(request,'File Uploaded Successfully')
+            data=companydb.objects.get(id=cid)
+            return render(request,'del_upload.html',{'data':data})
+    else:
+        return render(request,'login.html')
 
 
     

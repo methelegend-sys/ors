@@ -1,0 +1,108 @@
+{% extends "admin1/layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+	<div class="content">
+		<div class="page-inner">
+			<div class="page-header">
+				<h4 class="page-title">ADD</h4>
+				<ul class="breadcrumbs">
+					<li class="nav-home">
+						<a href="#">
+							<i class="flaticon-home"></i>
+						</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">ADD</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Delivery Executive</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Form</div>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-6 col-lg-4">
+									<div class="form-group">
+										<label for="email2">Name</label>
+										<input type="email" class="form-control" id="email2" name= 'name' placeholder="Enter Name" required>
+										<small id="emailHelp2" class="form-text text-muted">Please enter your name same as your identity proof.</small>
+									</div>
+									<div class="form-group">
+										<label for="password">Password</label>
+										<input type="password" class="form-control" id="password" placeholder="Password">
+									</div>
+									<div class="form-group form-inline">
+										<label for="inlineinput" class="col-md-3 col-form-label">Vehicle Type</label>
+										<div class="col-md-9 p-0">
+											<input type="text" class="form-control input-full" id="inlineinput" placeholder="Enter Input">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text">Address</span>
+											</div>
+											<textarea class="form-control" aria-label="With textarea"></textarea>
+										</div>
+									</div>
+									
+								</div>
+								<div class="col-md-6 col-lg-4">
+									<div class="form-group">
+										<label for="email2">Email Address</label>
+										<input type="email" class="form-control" id="email2" name= 'email' placeholder="Enter Email" required>
+										<small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									</div>
+									<div class="form-group">
+										<label for="password">Confirm Password</label>
+										<input type="password" class="form-control" id="password" placeholder="Confirm Password">
+									</div>
+									<div class="form-group form-inline">
+										<label for="inlineinput" class="col-md-3 col-form-label">Mobile Number</label>
+										<div class="col-md-9 p-0">
+											<input type="text" class="form-control input-full" id="inlineinput" placeholder="Enter Input">
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">Submit</button>
+							<button class="btn btn-danger">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/assets/js/setting-demo2.js"></script>
+
+{% endblock javascripts %}	

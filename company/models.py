@@ -20,8 +20,9 @@ class curr_del(models.Model):
     cmp_id=models.ForeignKey(companydb,on_delete=models.CASCADE)
 
 class delivery_data(models.Model):
-    cmp_id=models.ForeignKey(companydb,on_delete=models.CASCADE)
-    new_del=models.FileField(upload_to='delivery_data/')
+    data_id=models.CharField(max_length=10,primary_key=True)
+    cmp_id=models.CharField(max_length=10)
+    new_del=models.FileField()
     uploaded_at=models.DateTimeField(auto_now_add=True)
 
 class delivery_log(models.Model):
