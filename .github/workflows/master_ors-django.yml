@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'ors-django'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_6fee1636e282411298aab8079be422a9 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1fd8539b723d4d22b9546a4a01469de6 }}
